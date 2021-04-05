@@ -1,18 +1,18 @@
-import { Dimentions, PixelRatio } from 'react-native'
+import { Dimensions, PixelRatio } from 'react-native'
 
-const { height, width } = Dimentions.get('window')
+const { height, width } = Dimensions.get('window')
 const figmaWidth = 375
 
 const wp = (widthPercent) => {
-  PixelRatio.roundToNearestPixel((width * parseFloat(widthPercent)) / 100,)
+  return PixelRatio.roundToNearestPixel((width * parseFloat(widthPercent)) / 100,)
 }
 
 const hp = (heightPercent) => {
-  PixelRatio.roundToNearestPixel((height * parseFloat(heightPercent)) / 100,)
+  return PixelRatio.roundToNearestPixel((height * parseFloat(heightPercent)) / 100,)
 }
 
 const px = (valuePx) => {
-  PixelRatio.roundToNearestPixel((width * parseFloat((valuePx / figmaWidth) * 100)) / 100,)
+  return PixelRatio.roundToNearestPixel((width * parseFloat((valuePx / figmaWidth) * 100)) / 100,)
 }
 
 export const metrics = {

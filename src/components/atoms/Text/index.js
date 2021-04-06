@@ -7,7 +7,7 @@ export const Title = styled.Text`
 `
 
 export const InputLabel = styled.Text`
-  font-size: ${({ theme }) => theme.metrics.px(14)}px;
+  font-size: ${({ theme }) => theme.metrics.px(16)}px;
   color: white;
   font-weight: 600;
 `

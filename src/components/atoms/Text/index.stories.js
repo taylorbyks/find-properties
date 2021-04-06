@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
-import { Title, InputLabel, CardDescription, CardHightLightText, CardTitle, DetailSectionTitle, DetailSubTitle, DetailText, DetailTitle} from './index'
+import { Title, InputLabel, CardDescription, CardHightLightText, CardTitle, DetailSectionTitle, DetailSubTitle, DetailText, DetailTitle } from './index'
 
 const Wrapper = styled.View`
   flex: 1;

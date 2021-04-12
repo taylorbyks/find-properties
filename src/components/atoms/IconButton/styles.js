@@ -1,13 +1,14 @@
-import styled from 'styled-components/native'
-import { TouchableOpacity } from 'react-native'
+import styled, { css } from 'styled-components/native'
 
-export const ButtonContainer = styled.TouchableOpacity`
-  width: ${({ theme }) => theme.metrics.px(48)}px;
-  height: ${({ theme }) => theme.metrics.px(48)}px;
-  background-color: ${({ theme, transparent }) => transparent ? theme.colors.purpleTransparent : theme.colors.backgrountLight};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: ${({ theme }) => theme.metrics.px(6)}px;
+export const IconButtonContainer = styled.TouchableOpacity`
+  ${({ theme, transparent }) => css`
+    width: ${theme.metrics.px(48)}px;
+    height: ${theme.metrics.px(48)}px;
+    background-color: ${transparent ? theme.colors.purpleTransparent : theme.colors.backgroundLight};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: ${theme.metrics.px(6)}px;
+  `}
 `
 

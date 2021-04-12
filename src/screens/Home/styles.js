@@ -14,12 +14,12 @@ export const ScreenContainer = styled.View`
 export const TopContainer = styled.View`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: ${ ({ theme }) => theme.metrics.px(36)}px;
+  margin-bottom: ${ ({ theme }) => theme.metrics.px(20)}px;
 `
 
 export const TitleContainer = styled.View`
-  width: 60%;
+  width: 65%;
 `

@@ -11,4 +11,3 @@ export const IconButtonContainer = styled.TouchableOpacity`
     border-radius: ${theme.metrics.px(6)}px;
   `}
 `
-

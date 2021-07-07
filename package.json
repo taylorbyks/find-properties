@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "react": "17.0.1",
-    "react-native": "0.64.0",
+    "react-native": "facebook/react-native#cf8a364767df830d7255339741350bb53ab1a68a",
     "react-native-vector-icons": "^8.1.0",
     "styled-components": "^5.2.3"
   },

@@ -3,7 +3,7 @@ import { CardDescription, CardHightLightText, CardTitle } from '../../atoms'
 import { CardContainer, CardImage, TextContainer, TextContainerLeft, TextContainerRight } from './styles'
 
 export const HouseCard = ({ imgSource }) => {
-  return(
+  return (
     <CardContainer>
       <CardImage source={{ uri: imgSource }} />
       <TextContainer>

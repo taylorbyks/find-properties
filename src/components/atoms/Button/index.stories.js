@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/native'
-import { text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react-native';
-import React from 'react';
+import { text } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react-native'
+import React from 'react'
 import { Button } from './index'
 
 const Wrapper = styled.View`
@@ -9,8 +9,8 @@ const Wrapper = styled.View`
     flex: 1;
     align-items: center;
     justify-content: center;
-    background-color: ${ theme.colors.backgroundDark};
-    padding: ${ theme.metrics.px(24)}px;
+    background-color: ${theme.colors.backgroundDark};
+    padding: ${theme.metrics.px(24)}px;
   `}
 `
 const stories = storiesOf('Button', module)

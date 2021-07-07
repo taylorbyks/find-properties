@@ -1,16 +1,15 @@
-import React from "react";
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { HomeScreen } from "./screens"
+import { HomeScreen } from './screens'
 import { theme } from './styles/themes'
 import StoryBook from '../storybook'
-
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <StoryBook />
     </ThemeProvider>
-  );
+  )
 }
 
 export default App

@@ -13,4 +13,3 @@ export const ButtonContainer = styled.TouchableOpacity`
     height: ${theme.metrics.px(56)}px;
   `}
 `
-

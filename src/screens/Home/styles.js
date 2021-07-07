@@ -5,10 +5,10 @@ export const ScreenContainer = styled.View`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  background-color: ${ ({ theme }) => theme.colors.backgroundDark };
+  background-color: ${({ theme }) => theme.colors.backgroundDark};
   width: 100%;
   height: 100%;
-  padding: ${ ({ theme }) => theme.metrics.px(24)}px;
+  padding: ${({ theme }) => theme.metrics.px(24)}px;
 `
 
 export const TopContainer = styled.View`
@@ -17,7 +17,7 @@ export const TopContainer = styled.View`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: ${ ({ theme }) => theme.metrics.px(20)}px;
+  margin-bottom: ${({ theme }) => theme.metrics.px(20)}px;
 `
 
 export const TitleContainer = styled.View`

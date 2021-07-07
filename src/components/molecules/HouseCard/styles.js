@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/native';
+import styled, { css } from 'styled-components/native'
 
 export const CardContainer = styled.TouchableOpacity`
   ${({ theme }) => css`
@@ -19,7 +19,6 @@ export const CardImage = styled.Image`
   width: 100%;
   height: 70%;
 `
-
 
 export const TextContainer = styled.View`
   ${({ theme }) => css`
@@ -50,12 +49,3 @@ export const TextContainerRight = styled.View`
   align-items: flex-end;
   justify-content: center;
 `
-
-
-
-
-
-
-
-
-

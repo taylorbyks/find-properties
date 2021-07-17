@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { IconButton, Input, Title, PropertiesList, Loading } from '../../components'
-import { ScreenContainer, TopContainer, TitleContainer, ContentContainer, LoadingContainer } from './styles'
+import { ScreenContainer, TopContainer, TitleContainer, ContentContainer } from './styles'
 import { getPropertiesCall } from '../../services/calls'
 
 export const HomeScreen = () => {

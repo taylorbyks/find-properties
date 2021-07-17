@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { API_URL, XRAPIDAPIKEY, XRAPIDAPIHOST } from 'react-native-dotenv'
+import { API_URL, XRAPIDAPIKEY, XRAPIDAPIHOST } from '@env'
 
 const api = axios.create({
   baseURL: API_URL,

@@ -6,7 +6,7 @@ export const CardContainer = styled.TouchableOpacity`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    width: ${theme.metrics.wp(86)}px;
+    width: ${theme.metrics.wp(87)}px;
     height: ${theme.metrics.px(240)}px;
     border-radius: ${theme.metrics.px(24)}px;
     background-color: ${theme.colors.backgroundLight};
@@ -27,8 +27,7 @@ export const TextContainer = styled.View`
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    padding-vertical: ${theme.metrics.px(12)}px;
-    padding-horizontal: ${theme.metrics.px(14)}px;
+    padding: ${theme.metrics.px(12)}px ${theme.metrics.px(14)}px;
   `}
 `
 

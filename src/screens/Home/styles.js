@@ -9,7 +9,6 @@ export const ScreenContainer = styled.View`
     background-color: ${theme.colors.backgroundDark};
     width: 100%;
     height: 100%;
-
   `}
 `
 

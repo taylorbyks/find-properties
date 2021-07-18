@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { SectionImage, SectionView } from './styles'
 import SplashLogo from '../../assets/Logo.png'
 import { StatusBar } from 'react-native'

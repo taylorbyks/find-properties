@@ -1,15 +1,22 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 import { CardDescription, CardHightLightText, CardTitle } from '../../atoms'
 import { CardContainer, CardImage, TextContainer, TextContainerLeft, TextContainerRight } from './styles'
 
-export const PropertyCard = ({ imgSource, title, description, price }) => {
+export const PropertyCard = ({ imgSource, title, description, price, item }) => {
+  const navigation = useNavigation()
+
   const formatedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   })
 
+  function onClickItemContainer() {
+    navigation.navigate('Detail', { selectedProperty: item })
+  }
+
   return (
-    <CardContainer>
+    <CardContainer onPress={onClickItemContainer}>
       <CardImage source={{ uri: imgSource }} />
       <TextContainer>
         <TextContainerLeft>

@@ -8,6 +8,7 @@ export const PropertiesList = ({ data, children }) => {
       data={data}
       renderItem={({ item }) => (
         <PropertyCard
+          item={item}
           title={item.address.line}
           description={`${item.address.neighborhood_name} - ${item.address.state}`}
           price={item.community.price_max}

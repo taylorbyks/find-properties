@@ -36,7 +36,7 @@ export const DetailSubTitle = styled.Text`
   ${({ theme }) => css`
     font-size: ${theme.metrics.px(18)}px;
     color: white;
-    font-family: ${theme.fonts.regular};
+    font-family: ${theme.fonts.semibold};
   `}
 `
 

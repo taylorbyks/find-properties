@@ -1,6 +1,6 @@
 import React from 'react'
 import { PropertyCard } from '../../molecules'
-import { PropertiesListContainer } from './styles'
+import { PropertiesListContainer, PropertiesListFooterContainer } from './styles'
 
 export const PropertiesList = ({ data, children }) => {
   return (
@@ -17,6 +17,7 @@ export const PropertiesList = ({ data, children }) => {
       )}
       keyExtractor={(item) => item.property_id}
       ListHeaderComponent={children}
+      ListFooterComponent={<PropertiesListFooterContainer />}
     />
   )
 }

@@ -23,11 +23,9 @@ export const ImageBackground = styled.ImageBackground`
   `}
 `
 
-export const BottomContainer = styled.View`
+export const BottomContainer = styled.ScrollView`
   ${({ theme }) => css`
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     background-color: ${theme.colors.backgroundDark};
     padding: ${theme.metrics.px(24)}px;
     width: 100%;
@@ -36,5 +34,16 @@ export const BottomContainer = styled.View`
     border-top-right-radius: ${theme.metrics.px(24)}px;
     position: absolute;
     bottom: 0;
+  `}
+`
+
+export const FeaturesContainer = styled.View`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: ${theme.metrics.hp(12)}px;
   `}
 `

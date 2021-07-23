@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { IconButton, DetailTitle, DetailSubTitle, DetailSectionTitle, DetailText, Loading } from '../../components'
+import {
+  IconButton,
+  DetailTitle,
+  DetailSubTitle,
+  DetailSectionTitle,
+  DetailText,
+  Loading,
+  PropertyFeatureCard,
+} from '../../components'
 import { getPropertyDetails } from '../../services/calls'
-import { ImageBackground, ScreenContainer, BottomContainer } from './styles'
+import { ImageBackground, ScreenContainer, BottomContainer, FeaturesContainer } from './styles'
 
 export const Detail = ({ route, navigation }) => {
   const [loading, setLoading] = useState(true)
@@ -42,12 +50,29 @@ export const Detail = ({ route, navigation }) => {
       ) : (
         <BottomContainer>
           <DetailTitle>{propertyDetail.address.line}</DetailTitle>
-          <DetailSubTitle>{price != null ? formatedPrice.format(price) : ' '}</DetailSubTitle>
-          <DetailText>
+          <DetailSubTitle mt={4}>{price != null ? formatedPrice.format(price) : ' '}</DetailSubTitle>
+          <DetailText mt={4}>
             {propertyDetail.address.neighborhood_name} - {propertyDetail.address.state}
           </DetailText>
-          <DetailSectionTitle>Detalhes</DetailSectionTitle>
-          <DetailSectionTitle>Vantagens do Imóvel</DetailSectionTitle>
+          <DetailSectionTitle mt={24}>Detalhes</DetailSectionTitle>
+          <FeaturesContainer>
+            <PropertyFeatureCard
+              iconName="expand-outline"
+              featureText={`${propertyDetail.lot_size.size} ${propertyDetail.lot_size.units}`}
+            />
+            <PropertyFeatureCard
+              iconName="bed-outline"
+              featureText={`${propertyDetail.community.beds_min} - ${propertyDetail.community.beds_max} Camas`}
+            />
+            <PropertyFeatureCard
+              iconName="home-outline"
+              featureText={`${propertyDetail.community.baths_max} Banheiros`}
+            />
+          </FeaturesContainer>
+          <DetailSectionTitle mt={24} mb={12}>Vantagens do Imóvel</DetailSectionTitle>
+          {propertyDetail.features[1].text.map((item) => (
+            <DetailText mb={2} key={item}>- {item}</DetailText>
+          ))}
         </BottomContainer>
       )}
     </ScreenContainer>

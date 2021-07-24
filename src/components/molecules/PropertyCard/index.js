@@ -1,10 +1,12 @@
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
+import { usePropertiesStore } from '../../../services/stores'
 import { CardDescription, CardHightLightText, CardTitle } from '../../atoms'
 import { CardContainer, CardImage, TextContainer, TextContainerLeft, TextContainerRight } from './styles'
 
 export const PropertyCard = ({ imgSource, title, description, price, item }) => {
   const navigation = useNavigation()
+  const { setSelectedProperty } = usePropertiesStore()
 
   const formatedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -12,7 +14,8 @@ export const PropertyCard = ({ imgSource, title, description, price, item }) => 
   })
 
   function onClickItemContainer() {
-    navigation.navigate('Detail', { selectedProperty: item })
+    setSelectedProperty(item)
+    navigation.navigate('Detail')
   }
 
   return (

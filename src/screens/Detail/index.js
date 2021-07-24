@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { usePropertiesStore } from '../../services/stores'
 import {
   IconButton,
   DetailTitle,
@@ -11,10 +12,10 @@ import {
 import { getPropertyDetails } from '../../services/calls'
 import { ImageBackground, ScreenContainer, BottomContainer, FeaturesContainer } from './styles'
 
-export const Detail = ({ route, navigation }) => {
+export const Detail = ({ navigation }) => {
   const [loading, setLoading] = useState(true)
+  const { selectedProperty } = usePropertiesStore()
   const [propertyDetail, setPropertyDetail] = useState()
-  const { selectedProperty } = route.params
 
   const price = selectedProperty.community.price_max
 
@@ -69,9 +70,13 @@ export const Detail = ({ route, navigation }) => {
               featureText={`${propertyDetail.community.baths_max} Banheiros`}
             />
           </FeaturesContainer>
-          <DetailSectionTitle mt={24} mb={12}>Vantagens do Imóvel</DetailSectionTitle>
+          <DetailSectionTitle mt={24} mb={12}>
+            Vantagens do Imóvel
+          </DetailSectionTitle>
           {propertyDetail.features[1].text.map((item) => (
-            <DetailText mb={2} key={item}>- {item}</DetailText>
+            <DetailText mb={2} key={item}>
+              - {item}
+            </DetailText>
           ))}
         </BottomContainer>
       )}

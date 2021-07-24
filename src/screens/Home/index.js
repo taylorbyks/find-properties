@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { IconButton, Input, Title, PropertiesList, Loading } from '../../components'
 import { ScreenContainer, TopContainer, TitleContainer, ContentContainer } from './styles'
 import { getPropertiesCall } from '../../services/calls'
+import { usePropertiesStore } from '../../services/stores'
 
 export const HomeScreen = () => {
-  const [properties, setProperties] = useState([])
+  const { properties, setProperties } = usePropertiesStore()
   const [loading, setLoading] = useState(true)
 
   async function callGetProperties() {

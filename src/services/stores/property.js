@@ -1,8 +1,8 @@
 import create from 'zustand'
 
 export const usePropertiesStore = create(set => ({
-  propertiesList: [],
-  setPropertiesList: propertiesList => set({ propertiesList }),
+  properties: [],
+  setProperties: properties => set({ properties }),
 
   selectedProperty: null,
   setSelectedProperty: selectedProperty => set({ selectedProperty }),

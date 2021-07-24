@@ -11,9 +11,11 @@ import {
 } from '../../components'
 import { getPropertyDetails } from '../../services/calls'
 import { ImageBackground, ScreenContainer, BottomContainer, FeaturesContainer } from './styles'
+import { getIfPropertyIsFavorite, savePropertyAsFavorite, removePropertyAsFavorite } from '../../services/db'
 
 export const Detail = ({ navigation }) => {
   const [loading, setLoading] = useState(true)
+  const [favorite, setFavorite] = useState(false)
   const { selectedProperty } = usePropertiesStore()
   const [propertyDetail, setPropertyDetail] = useState()
 
@@ -30,8 +32,24 @@ export const Detail = ({ navigation }) => {
     setLoading(false)
   }
 
+  async function checkIfPropertyIsFavorite() {
+    const isFavorite = await getIfPropertyIsFavorite(selectedProperty.property_id)
+    setFavorite(isFavorite)
+  }
+
+  async function handleFavorite() {
+    if (favorite) {
+      await removePropertyAsFavorite(selectedProperty.property_id)
+      setFavorite(false)
+    } else {
+      await savePropertyAsFavorite(selectedProperty.property_id)
+      setFavorite(true)
+    }
+  }
+
   useEffect(() => {
     callGetPropertyDetail()
+    checkIfPropertyIsFavorite()
   }, [])
 
   function onClickArrowBack() {
@@ -42,7 +60,12 @@ export const Detail = ({ navigation }) => {
     <ScreenContainer>
       <ImageBackground source={{ uri: selectedProperty.photos[0].href }}>
         <IconButton iconName="chevron-back" onPress={onClickArrowBack} transparent />
-        <IconButton iconName="star-outline" transparent />
+        <IconButton
+          iconName={favorite ? 'star' : 'star-outline'}
+          onPress={handleFavorite}
+          fill={favorite}
+          transparent
+        />
       </ImageBackground>
       {loading ? (
         <BottomContainer>

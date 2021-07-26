@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from 'react'
-import { IconButton, Input, Title, PropertiesList, Loading } from '../../components'
+import { IconButton, Input, Title, PropertiesList, Loading, FilterModal } from '../../components'
 import { ScreenContainer, TopContainer, TitleContainer, ContentContainer } from './styles'
-import { getPropertiesCall } from '../../services/calls'
 import { usePropertiesStore } from '../../services/stores'
+import { usePropertiesHooks } from '../../services/hooks'
 
 export const HomeScreen = () => {
-  const { properties, setProperties } = usePropertiesStore()
-  const [loading, setLoading] = useState(true)
+  const { onGetProperties } = usePropertiesHooks()
+  const { properties, loadingProperties } = usePropertiesStore()
+  const [filterModalVisible, setFilterModalVisible] = useState(false)
 
-  async function callGetProperties() {
-    const result = await getPropertiesCall()
-    setProperties(result.properties ? result.properties : [])
-    setLoading(false)
+  function toggleFilterModal() {
+    setFilterModalVisible(!filterModalVisible)
   }
 
   useEffect(() => {
-    callGetProperties()
+    onGetProperties()
   }, [])
 
   return (
     <ScreenContainer>
-      <PropertiesList data={properties}>
+      <PropertiesList data={properties} loading={loadingProperties} onEndReached={onGetProperties}>
         <ContentContainer>
           <TopContainer>
             <TitleContainer>
               <Title>Encontre aqui seu imóvel</Title>
             </TitleContainer>
-            <IconButton iconName="filter" />
+            <IconButton iconName="filter" onPress={toggleFilterModal} />
           </TopContainer>
           <Input label="Localização" placeholder="Digite o endereço" />
-          {loading && <Loading />}
+          {loadingProperties && <Loading />}
         </ContentContainer>
       </PropertiesList>
+      <FilterModal visible={filterModalVisible} onClose={toggleFilterModal} />
     </ScreenContainer>
   )
 }

@@ -19,7 +19,7 @@ export const Detail = ({ navigation }) => {
   const { selectedProperty } = usePropertiesStore()
   const [propertyDetail, setPropertyDetail] = useState()
 
-  const price = selectedProperty.community.price_max
+  const price = selectedProperty.community && selectedProperty.community.price_max
 
   const formatedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -86,17 +86,17 @@ export const Detail = ({ navigation }) => {
             />
             <PropertyFeatureCard
               iconName="bed-outline"
-              featureText={`${propertyDetail.community.beds_min} - ${propertyDetail.community.beds_max} Camas`}
+              featureText={`${selectedProperty.community ? propertyDetail.community.beds_min+ "-"+ propertyDetail.community.beds_max + "Camas": ""}`}
             />
             <PropertyFeatureCard
               iconName="home-outline"
-              featureText={`${propertyDetail.community.baths_max} Banheiros`}
+              featureText={`${selectedProperty.community ? propertyDetail.community.baths_max + "Banheiros": ""}`}
             />
           </FeaturesContainer>
           <DetailSectionTitle mt={24} mb={12}>
             Vantagens do Imóvel
           </DetailSectionTitle>
-          {propertyDetail.features[1].text.map((item) => (
+          {propertyDetail.features[1] && propertyDetail.features[1].text.map((item) => (
             <DetailText mb={2} key={item}>
               - {item}
             </DetailText>

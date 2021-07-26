@@ -19,11 +19,20 @@ export const Title = styled(BaseText)`
 
 export const InputLabel = styled(BaseText)`
   ${({ theme }) => css`
+    font-size: ${theme.metrics.px(14)}px;
+    color: white;
+    font-family: ${theme.fonts.semibold};
+  `}
+`
+
+export const InputSectionLabel = styled(BaseText)`
+  ${({ theme }) => css`
     font-size: ${theme.metrics.px(16)}px;
     color: white;
     font-family: ${theme.fonts.semibold};
   `}
 `
+
 export const ButtonText = styled(BaseText)`
   ${({ theme }) => css`
     font-size: ${theme.metrics.px(22)}px;

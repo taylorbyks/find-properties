@@ -78,7 +78,7 @@ export const Detail = ({ navigation }) => {
           <DetailText mt={4}>
             {propertyDetail.address.neighborhood_name} - {propertyDetail.address.state}
           </DetailText>
-          <DetailSectionTitle mt={24}>Detalhes</DetailSectionTitle>
+          <DetailSectionTitle mt={20} mb={12}>Detalhes</DetailSectionTitle>
           <FeaturesContainer>
             <PropertyFeatureCard
               iconName="expand-outline"
@@ -86,14 +86,14 @@ export const Detail = ({ navigation }) => {
             />
             <PropertyFeatureCard
               iconName="bed-outline"
-              featureText={`${selectedProperty.community ? propertyDetail.community.beds_min+ "-"+ propertyDetail.community.beds_max + "Camas": ""}`}
+              featureText={`${selectedProperty.community ? propertyDetail.community.beds_min+ "-"+ propertyDetail.community.beds_max + " Camas": ""}`}
             />
             <PropertyFeatureCard
               iconName="home-outline"
-              featureText={`${selectedProperty.community ? propertyDetail.community.baths_max + "Banheiros": ""}`}
+              featureText={`${selectedProperty.community ? propertyDetail.community.baths_max + " Toaletes": ""}`}
             />
           </FeaturesContainer>
-          <DetailSectionTitle mt={24} mb={12}>
+          <DetailSectionTitle mt={20} mb={12}>
             Vantagens do Imóvel
           </DetailSectionTitle>
           {propertyDetail.features[1] && propertyDetail.features[1].text.map((item) => (
